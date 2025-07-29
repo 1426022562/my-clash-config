@@ -1,0 +1,17 @@
+proxies:
+  - name: "MySocks5"    # 自定义名称
+    type: socks5
+    server: 154.44.85.34
+    port: 7778
+    username: vmos_US_uo9l9l2w   # 若有则取消注释
+    password: idzlar
+    udp: true
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "MySocks5"
+
+rules:
+  - MATCH,PROXY  # 所有流量走此代理
